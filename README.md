@@ -1,6 +1,6 @@
 # Smart Quote Request Assistant
 
-This is a small Python program that collects customer and job information for a quote request.
+This is a Python program that collects customer and job information for a quote request.
 
 The program checks that the main information is valid, calculates an indicative price, displays a summary, and saves the request in a text file.
 
@@ -54,3 +54,67 @@ python3 main.py
 - Add stronger email and phone validation
 - Send completed quote requests by email
 - Add a login area for the business owner
+
+## Testing
+
+The program was tested with different types of input.
+
+### Test 1: Valid information
+
+- Customer name: simona
+- Email: simona@gmail.com
+- Phone: 85347589479873
+- Job location: gold coast
+- Service type: polish
+- Surface type: granite
+- Area: 50.0 m²
+
+Expected result:
+
+- The program accepts the information
+- The estimated price is $7,500.00
+- The quote request is saved successfully
+
+### Test 2: Empty required field
+
+Input:
+
+- Leave the customer name empty
+
+Expected result:
+
+- The program displays `Customer name cannot be empty.`
+- The user is asked to enter the name again
+
+### Test 3: Invalid email address
+
+Input:
+
+- `simona`
+
+Expected result:
+
+- The program displays `Please enter a valid email address.`
+
+### Test 4: Invalid phone number
+
+Input:
+
+- `abc123`
+
+Expected result:
+
+- The program displays `Please enter a valid phone number using digits only.`
+
+### Test 5: Invalid area
+
+Input:
+
+- `twenty`
+- `-5`
+- `0`
+
+Expected result:
+
+- Text input displays `Please enter a valid number.`
+- Zero or negative input displays `Area must be greater than zero.`
